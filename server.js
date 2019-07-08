@@ -8,6 +8,10 @@ const users = require("./routes/api/users");
 //DB config
 const db = require("./config/keys").mongoURI;
 
+//SOCKET for chat
+var http = require("http").Server(express);
+var io = require("socket.io")(http);
+
 //Connect to the MongoDB
 mongoose
   .connect(db, { useNewUrlParser: true })
