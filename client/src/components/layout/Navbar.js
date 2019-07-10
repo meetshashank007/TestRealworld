@@ -48,6 +48,17 @@ class Navbar extends Component {
       </ul>
     );
 
+    const dashboard = (
+      <ul className="navbar-nav mr-auto">
+        <li className="nav-item">
+          <Link className="nav-link" to="/dashboard">
+            {" "}
+            Dashboard
+          </Link>
+        </li>
+      </ul>
+    );
+
     return (
       <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
         <div className="container">
@@ -64,14 +75,7 @@ class Navbar extends Component {
           </button>
 
           <div className="collapse navbar-collapse" id="mobile-nav">
-            <ul className="navbar-nav mr-auto">
-              <li className="nav-item">
-                <Link className="nav-link" to="/profiles">
-                  {" "}
-                  Developers
-                </Link>
-              </li>
-            </ul>
+            {isAuthenticated ? dashboard : ""}
             {isAuthenticated ? authLinks : guestLinks}
           </div>
         </div>

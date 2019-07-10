@@ -12,6 +12,7 @@ import Login from "./components/auth/Login";
 import "./App.css";
 import setAuthToken from "./util/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authAction";
+import Dashboard from "./components/dashboard/Dashboard";
 
 //Check for token
 if (localStorage.jwtToken) {
@@ -48,6 +49,7 @@ function App() {
           <div className="conatiner">
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/dashboard" component={Dashboard} />
           </div>
           <Footer />
         </div>
