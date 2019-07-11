@@ -13,7 +13,7 @@ class Dashboard extends Component {
       messages: []
     };
 
-    this.socket = io("localhost:5000");
+    this.socket = io("//:5000");
 
     this.socket.on("RECEIVE_MESSAGE", function(data) {
       addMessage(data);
